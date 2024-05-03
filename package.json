@@ -1,0 +1,14 @@
+{
+  "name": "randomapi",
+  "version": "1.0.0",
+  "description": "Random API with express and mongodb",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "SAI TEJA KOLA",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
