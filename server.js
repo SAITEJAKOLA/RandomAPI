@@ -7,7 +7,7 @@ const ideas = [
     text: "Gratitude Gazette, a newsletter dedicated to practicing gratitude and spreading positivity",
     tag: "Lifestyle",
     username: "AnanyaShukla",
-    date: "2024-11-15",
+    date: "2024-11-10",
   },
   {
     id: 2,
