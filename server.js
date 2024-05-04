@@ -1,17 +1,18 @@
-const path = require('path')
+const path = require('path');
 const express = require('express');
 const cors = require('cors');
-const ideasRouter = require('./routes/ideas');
 require('dotenv').config();
-const connectDb = require('./config/db');
-const port = process.env.PORT;
-connectDb();
+const port = process.env.PORT || 5000;
+const connectDB = require('./config/db');
+
+connectDB();
+
 const app = express();
 
-//Static folder
+// Static Folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-//Body parser middleware
+// Body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -23,15 +24,11 @@ app.use(
   })
 );
 
-//welcomepage
 app.get('/', (req, res) => {
-  res.json({ message: 'Welcome to RandomIdeas API' });
+  res.json({ message: 'Welcome to the RandomIdeas API' });
 });
 
-//Router to backend API's
+const ideasRouter = require('./routes/ideas');
 app.use('/api/ideas', ideasRouter);
 
-//Server listens on
-app.listen(port, () => {
-  console.log(`Server is listening on port ${port}`);
-});
+app.listen(port, () => console.log(`Server listening on port ${port}`));
