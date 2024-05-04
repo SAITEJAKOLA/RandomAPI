@@ -1,6 +1,9 @@
 const express = require('express');
 const ideasRouter = require('./routes/ideas');
-const port = 5000;
+require('dotenv').config();
+const connectDb = require('./config/db');
+const port = process.env.PORT;
+connectDb();
 const app = express();
 
 //Body parser middleware
@@ -8,7 +11,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 //welcomepage
 app.get('/', (req, res) => {
-  //   res.send({ message: "Hello World!" });
   res.json({ message: 'Welcome to RandomIdeas API' });
 });
 app.use('/api/ideas', ideasRouter);
