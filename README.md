@@ -2,6 +2,8 @@
 
 RandomIdeas API is a simple API built using Express.js and MongoDB for managing random ideas.
 
+The web app is up and running on render, Please visit https://randomapi-awvk.onrender.com/
+
 ## Installation
 
 1. Clone the repository:
